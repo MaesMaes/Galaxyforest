@@ -20,6 +20,13 @@ a {
     text-decoration: none;
     color: #1B1B25;
 }
+h3 {
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 0.75em;
+    font-weight: 900;
+    color: #1B1B25;
+    letter-spacing: 0.16667em;
+}
 .hvr-underline-from-left:before {
     background: $green!important;
     height: 3px!important;
@@ -49,6 +56,15 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-transition: width 0.5s ease-in-out 0.5s;
+    -moz-transition: width 0.5s ease-in-out 0.5s;
+    transition: width 0.5s ease-in-out 0.5s;
+    &.main-expand {
+        -webkit-transition: width 0.5s ease-in-out 0.5s;
+        -moz-transition: width 0.5s ease-in-out 0.5s;
+        transition: width 0.5s ease-in-out 0.5s;
+        width: 100vw;
+    }
     &-header {
         width: 100%;
         height: 65px;
@@ -65,6 +81,9 @@ a {
             position: absolute;
             left: 50px;
             top: 30px;
+            &.move-up {
+                top: -100px;
+            }
         }
         &-volume_control {
             position: absolute;
@@ -232,6 +251,9 @@ a {
             opacity: 0.13;
             z-index: 0;
         }
+        &.fade-content {
+            opacity: 0;
+        }
         &-site_intro {
             position: absolute;
             width: 100%;
@@ -280,6 +302,7 @@ a {
             position: absolute;
             bottom: 30px;
             left: 50px;
+            transition: 0.9s;
             &-top_border {
                 height: 2px;
                 width: 30px;
@@ -296,6 +319,7 @@ a {
             position: absolute;
             bottom: 30px;
             right: 50px;
+            transition: 0.9s;
             &-top_border {
                 height: 2px;
                 width: 30px;
@@ -329,7 +353,6 @@ a {
         letter-spacing: 3px;
     }
 }
-
 .display_menu {
     -webkit-transform: translateX(0%);
     -moz-transform: translateX(0%);
@@ -488,6 +511,112 @@ html {
     min-height: 100%;
 }
 // -------------------------------------------------------Прелоадер.Конец
+// -------------------------------------------------------Page
+section {
+    font-family: "Roboto Mono";
+    position: relative;
+    width: 100vw;
+    padding: 12.5em 0;
+    -webkit-transition: top 0.5s ease-in-out;
+    -moz-transition: top 0.5s ease-in-out;
+    transition: top 0.5s ease-in-out;
+    &.project {
+        width: 100vw;
+        padding-top: 10%;
+        padding-bottom: 0;
+    }
+    & h2 {
+        margin: 0 0 0 -58px;
+        font-family: "brandon-grotesque", sans-serif;
+        font-size: 10.9375em;
+        color: rgba(27,28,34,0.03);
+        line-height: 1.43429em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        -webkit-transition: font-size 0.6s ease-in-out;
+        -moz-transition: font-size 0.6s ease-in-out;
+        transition: font-size 0.6s ease-in-out;
+        overflow: hidden;
+    }
+    & .content {
+        margin-top: -120px;
+        padding-left: 20%;
+        -webkit-transition: all 0.6s ease-in-out;
+        -moz-transition: all 0.6s ease-in-out;
+        transition: all 0.6s ease-in-out;
+        & p {
+            width: 585px;
+            font-size: 0.9375em;
+            line-height: 2.13333em;
+            -webkit-transition: width 0.3s ease-in-out;
+            -moz-transition: width 0.3s ease-in-out;
+            transition: width 0.3s ease-in-out;
+        }
+    }
+    & .project-image {
+        text-align: center;
+        margin-bottom: 160px;
+        -webkit-transition: all 0.6s ease-in-out;
+        -moz-transition: all 0.6s ease-in-out;
+        transition: all 0.6s ease-in-out;
+        & img {
+            width: 90%;
+            height: auto;
+            max-width: 1473px;
+        }
+    }
+}
+.project-link-nav {
+    -webkit-transition: top 0.5s ease-in-out;
+    -moz-transition: top 0.5s ease-in-out;
+    transition: top 0.5s ease-in-out;
+    top: -100px;
+    position: fixed;
+    color: #1B1B25;
+    font-family: "Roboto mono";
+    font-size: 0.625em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    left: 50px;
+    &.move-down {
+        top: 30px;
+    }
+    &.move-up {
+        top: -100px;
+    }
+}
+.work-with-us {
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    font-family: "brandon-grotesque", sans-serif;
+    font-size: 2.1875em;
+    text-align: center;
+    & h3 {
+        text-transform: uppercase;
+        line-height: 33px;
+    }
+    & a {
+        text-decoration: none;
+        color: #1B1B25;
+        font-family: "andale-mono";
+        font-size: 0.625em;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-size: 0.31429em;
+        position: relative;
+    }
+}
+.page {
+    display: none;
+    position: absolute;
+    top: 0;
+    &.active {
+        display: block;
+    }
+}
+// -------------------------------------------------------Page.Конец
 @import "media_queryes";
 @media (max-width: 1200px) {
     .main-header-menu {
@@ -509,6 +638,12 @@ html {
     .white-area {
         width: 100vw;
         left: -100vw;
+    }
+    .project-link-nav.move-down {
+        top: 50px;
+    }
+    .project-link-nav.move-up {
+        top: -100px;
     }
 }
 @media (max-width: 768px) {
@@ -532,5 +667,44 @@ html {
     .container,
     .main {
         height: 90vh;
+    }
+    .img-percentage {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        transform: translateY(-50%);
+        color: #fff;
+        font-family: "Roboto Mono", sans-serif;
+        font-size: 2.0625em;
+        letter-spacing: 10px;
+    }
+    .project-link-nav.move-down {
+        top: 26px;
+        left: auto;
+        right: 20px;
+        position: absolute;
+    }
+    section {
+        padding: 3.5em 0;
+        & .content {
+            padding-left: 20px;
+            padding-right: 20px;
+            & p {
+                width: 100%;
+            }
+        }
+        & .project-image {
+            margin-bottom: 30px;
+        }
+    }
+    .project-link-nav.move-down {
+        top: 20px;
+    }
+    .project-link-nav.move-up {
+        top: -100px;
+    }
+    .work-with-us h3 {
+        font-size: 0.35em;
     }
 }

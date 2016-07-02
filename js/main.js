@@ -69,6 +69,57 @@ $(window).on('load', function () {
         $('.img-percentage').fadeOut();
         var $preloader = $('#preloader');
         $(".white-area").addClass("show")
-        $preloader.delay(1400).fadeOut('slow');
+        $preloader.delay(800).fadeOut('slow');
     }, 700)
 });
+
+// Навигация
+(function($) {
+    $('.navigation').on('click', function () {
+        var link = $(this).data('navigation');
+        $('.main-home_wrapper').addClass('fade-content');
+        $('.project_list').delay(1000).fadeOut();
+        $('.main').addClass('main-expand');
+        $('.project-link-nav').removeClass('move-up');
+        $('.main-header-about').addClass('move-up');
+        $('.' + link + '-page').delay(1000).fadeIn();
+        $('footer').fadeOut();
+        $('.main-header-mobile_nav').removeClass('display_menu');
+        $('.animate_hamburger').removeClass('animate_hamburger');
+    });
+    $('.go-back').on('click', function () {
+        $('.main').removeClass('main-expand');
+        $('.main-home_wrapper').removeClass('fade-content');
+        $('.project_list').fadeIn();
+        $('.project-link-nav').addClass('move-up');
+        $('.main-header-about').removeClass('move-up');
+        $('.page').hide();
+        $('footer').fadeIn();
+    });
+})(jQuery);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
