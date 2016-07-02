@@ -1,13 +1,13 @@
-jQuery(document).ready(function () {
-    $('.project_list-project').on('mouseover', function () {
-        $('.project_list-project').css('opacity','.15');
-        $(this).css('opacity','1');
+jQuery(document).ready(function() {
+    $('.project_list-project').on('mouseover', function() {
+        $('.project_list-project').css('opacity', '.15');
+        $(this).css('opacity', '1');
 
-    }).on('mouseout', function () {
-        $('.project_list-project').css('opacity','1');
+    }).on('mouseout', function() {
+        $('.project_list-project').css('opacity', '1');
     });
 
-    $('.main-header-volume_control-onoff').on('click', function () {
+    $('.main-header-volume_control-onoff').on('click', function() {
         if ($(this).attr('tern') != 'tern') {
             $(this).attr('tern', 'tern');
             $(this).text('звук выкл');
@@ -21,7 +21,7 @@ jQuery(document).ready(function () {
         }
     });
 
-    $('.main-header-menu').on('click', function () {
+    $('.main-header-menu').on('click', function() {
         if ($(this).attr('state') != 'open') {
             $(this).attr('state', 'open');
             $('.main-header-mobile_nav').addClass('display_menu');
@@ -34,16 +34,17 @@ jQuery(document).ready(function () {
     });
 
 });
-(function($){
-    jQuery.fn.deScramble = function(t, n, i, r, o){
-        var a = "АБВГДЕЖЗИЙКЛМНОПРСТУФЧЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя",
+(function($) {
+    jQuery.fn.deScramble = function(t, n, i, r, o) {
+        var a = "АБВГДЕЖЗИЙКЛМНОПРСТУФЧЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюяABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
+            //var a = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
             s = $(this),
             u = setInterval(function() {
                 t -= n;
                 var e;
                 if (t - n > 0) {
                     e = i.split("");
-                    for (var l = 0; l < e.length; l++) e[l].match(/[a-z]/gi) && (e[l] = a.charAt(Math.floor(Math.random() * a.length)));
+                    for (var l = 0; l < e.length; l++) e[l].match(/[а-яa-z]/gi) && (e[l] = a.charAt(Math.floor(Math.random() * a.length)));
                     s.text(e.join(""))
                 } else if (0 >= t - n && t > 0) {
                     e = i.split("");
@@ -62,3 +63,12 @@ jQuery(document).ready(function () {
         $(".member").not(this).toggleClass("opacity")
     });
 })(jQuery);
+
+$(window).on('load', function () {
+    setTimeout(function () {
+        $('.img-percentage').fadeOut();
+        var $preloader = $('#preloader');
+        $(".white-area").addClass("show")
+        $preloader.delay(1400).fadeOut('slow');
+    }, 700)
+});

@@ -25,7 +25,7 @@ a {
     height: 3px!important;
 }
 .hvr-underline-from-left {
-    padding-bottom: 1px;
+    padding-bottom: 0;
 }
 .container {
     display: -webkit-box;
@@ -84,9 +84,7 @@ a {
                     height: 3px;
                     position: absolute;
                     width: 2px;
-
                     animation-name: sound;
-
                     animation-timing-function: linear;
                     animation-delay: -800ms;
                     animation-iteration-count: infinite;
@@ -331,7 +329,7 @@ a {
         letter-spacing: 3px;
     }
 }
-@import "media";
+
 .display_menu {
     -webkit-transform: translateX(0%);
     -moz-transform: translateX(0%);
@@ -357,7 +355,7 @@ a {
 }
 @keyframes sound {
     0% {
-       opacity: .35;
+        opacity: 0.35;
         height: 3px;
     }
     100% {
@@ -367,7 +365,7 @@ a {
 }
 @keyframes nosound {
     0% {
-       opacity: .35;
+        opacity: 0.35;
         height: 3px;
     }
     100% {
@@ -380,31 +378,121 @@ a {
     right: 30px;
     top: 40px;
     & .bar {
-       background: #666;
+        background: #666;
         bottom: 1px;
         height: 3px;
         position: absolute;
         width: 2px;
-        animation: sound 0ms -800ms linear infinite alternate;
-        &:nth-child(1)  { left: 1px; animation-duration: 474ms; }
-        &:nth-child(2)  { left: 5px; animation-duration: 433ms; }
-        &:nth-child(3)  { left: 9px; animation-duration: 407ms; }
-        &:nth-child(4)  { left: 13px; animation-duration: 458ms; }
-        &:nth-child(5)  { left: 17px; animation-duration: 400ms; }
-        &:nth-child(6)  { left: 21px; animation-duration: 427ms; }
-        &:nth-child(7)  { left: 25px; animation-duration: 441ms; }
-        &:nth-child(8)  { left: 29px; animation-duration: 419ms; }
-        &:nth-child(9)  { left: 33px; animation-duration: 487ms; }
-        &:nth-child(10) { left: 37px; animation-duration: 442ms; }
+        animation: sound 0 -800ms linear infinite alternate;
+        &:nth-child(1) {
+            left: 1px;
+            animation-duration: 474ms;
+        }
+        &:nth-child(2) {
+            left: 5px;
+            animation-duration: 433ms;
+        }
+        &:nth-child(3) {
+            left: 9px;
+            animation-duration: 407ms;
+        }
+        &:nth-child(4) {
+            left: 13px;
+            animation-duration: 458ms;
+        }
+        &:nth-child(5) {
+            left: 17px;
+            animation-duration: 400ms;
+        }
+        &:nth-child(6) {
+            left: 21px;
+            animation-duration: 427ms;
+        }
+        &:nth-child(7) {
+            left: 25px;
+            animation-duration: 441ms;
+        }
+        &:nth-child(8) {
+            left: 29px;
+            animation-duration: 419ms;
+        }
+        &:nth-child(9) {
+            left: 33px;
+            animation-duration: 487ms;
+        }
+        &:nth-child(10) {
+            left: 37px;
+            animation-duration: 442ms;
+        }
     }
     & .nosound {
-        animation: nosound 0ms -800ms linear infinite alternate;
+        animation: nosound 0 -800ms linear infinite alternate;
     }
 }
+// -------------------------------------------------------Прелоадер
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #1B1B25;
+    z-index: 999999;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.white-area.show {
+    left: 0;
+}
+.white-area {
+    -webkit-transition: left 0.8s ease-in-out;
+    -moz-transition: left 0.8s ease-in-out;
+    transition: left 0.8s ease-in-out;
+    width: 60vw;
+    height: 100vh;
+    background: #fff;
+    position: absolute;
+    left: -60vw;
+    top: 0;
+}
+.img-percentage {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    transform: translateY(-50%);
+    color: #fff;
+    font-family: "Roboto Mono", sans-serif;
+    font-size: 4.0625em;
+    letter-spacing: 18px;
+    line-height: 4.0625em;
+    text-align: center;
+}
+.img-load {
+    position: relative;
+    top: 45px;
+    z-index: 100;
+    font-size: 0.75em;
+    color: #fff;
+    font-family: "andale-mono";
+    text-transform: uppercase;
+}
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100%;
+}
+// -------------------------------------------------------Прелоадер.Конец
+@import "media_queryes";
 @media (max-width: 1200px) {
     .main-header-menu {
         display: block;
-        left: 50px
+        left: 50px;
     }
     .main-header-about {
         display: none;
@@ -413,10 +501,14 @@ a {
         display: block;
     }
     .main {
-        width: 100vw
+        width: 100vw;
     }
     .project_list {
         display: none;
+    }
+    .white-area {
+        width: 100vw;
+        left: -100vw;
     }
 }
 @media (max-width: 768px) {
@@ -437,7 +529,8 @@ a {
     .main-footer-right-top_border {
         display: none;
     }
-    .container, .main {
+    .container,
+    .main {
         height: 90vh;
     }
 }
