@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Studio</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono&subset=latin,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="node_modules/reset.css/reset.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="node_modules/hover.css/css/hover-min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/master.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <header class="main-header">
+                <a class="main-header-about hvr-underline-from-left" href="javascript:void(0)">хотите знать кто мы?</a>
+                <div class="main-header-volume_control">
+                    <div class="main-header-volume_control-onoff">звук вкл</div>
+                    <div id="bars">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="main-header-mobile_nav">
+                    <ul>
+                      <li class="main-header-discover_link"> <a href="#">о нас</a></li>
+                      <li><div class="sep"></div></li>
+                      <li class="hr"><a href="#">HR мастер класс</a> </li>
+                      <li class="furniture"><a href="#">дом мебели</a></li>
+                      <li class="potato"><a href="#">доставка картошки</a></li>
+                      <li class="artfood"><a href="#">artfood</a></li>
+                      <li class="ugaik"><a href="#">угаик</a></li>
+                      <li class="ovesti"><a href="#">ovesti</a> </li>
+                    </ul>
+                </div>
+                <div class="main-header-menu">
+                    <div class="main-header-menu-bar">
+
+                    </div>
+                </div>
+            </header>
+            <div class="main-home_wrapper">
+                <canvas id="shape" width="359" height="359"></canvas>
+                <div class="main-home_wrapper-site_intro">
+                    <div class="main-home_wrapper-site_intro-logo">
+                        <img src="images/logo.png" alt="GalaxyForest logo">
+                    </div>
+                    <h1>DIGITAL агенство</h1>
+                    <div class="main-home_wrapper-site_intro-text">создание и продвижение сайтов</div>
+                </div>
+            </div>
+            <footer class="main-footer">
+                <div class="main-footer-left">
+                    <div class="main-footer-left-top_border"></div>
+                    <a href="mailto:ma@galaxyforest.com?subject=Project%20Inquiry">ma@galaxyforest.com</a>
+                </div>
+                <div class="main-footer-right">
+                    <div class="main-footer-right-top_border"></div>
+                    <a href="#">+7 (905) 308-1726</a>
+                </div>
+            </footer>
+        </div>
+        <div class="project_list">
+            <a class="project_list-project hr" data-decrypt="Посмотреть проект" data-link="01. HR мастер класс" href="javascript:void(0)">01. HR мастер класс</a>
+            <a class="project_list-project hr" data-decrypt="Посмотреть проект" data-link="02. дом мебели" href="javascript:void(0)">02. дом мебели</a>
+            <a class="project_list-project hr" data-decrypt="Посмотреть проект" data-link="03. доставка картошки" href="javascript:void(0)">03. доставка картошки</a>
+            <a class="project_list-project hr" data-decrypt="Посмотреть проект" data-link="04. artfood" href="javascript:void(0)">04. artfood</a>
+            <a class="project_list-project hr" data-decrypt="Посмотреть проект" data-link="05. угаик" href="javascript:void(0)">05. угаик</a>
+            <a class="project_list-project hr" data-decrypt="Посмотреть проект" data-link="06. ovesti" href="javascript:void(0)">06. ovesti</a>
+        </div>
+    </div>
+    <audio autoplay="" id="sound" loop="" src="site-bg.mp3"></audio>
+    <script src="node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
+    <script src="js/hypnos.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+</body>
+</html>
