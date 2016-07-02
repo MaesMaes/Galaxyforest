@@ -75,26 +75,37 @@ $(window).on('load', function () {
 
 // Навигация
 (function($) {
+    var GF = {
+        navigation: {
+            portfolio: function (that) {
+                if (that.hasClass('no')) return;
+                var link = that.data('navigation');
+                $('.main-home_wrapper').addClass('fade-content');
+                $('.project_list').delay(1000).fadeOut();
+                $('.main').addClass('main-expand');
+                $('.project-link-nav').removeClass('move-up');
+                $('.main-header-about').addClass('move-up');
+                $('.' + link + '-page').delay(1000).fadeIn();
+                $('footer').fadeOut();
+                $('.main-header-mobile_nav').removeClass('display_menu');
+                $('.animate_hamburger').removeClass('animate_hamburger');
+            },
+            home: function () {
+                $('.main').removeClass('main-expand');
+                $('.main-home_wrapper').removeClass('fade-content');
+                $('.project_list').fadeIn();
+                $('.project-link-nav').addClass('move-up');
+                $('.main-header-about').removeClass('move-up');
+                $('.page').hide();
+                $('footer').fadeIn();
+            }
+        }
+    }
     $('.navigation').on('click', function () {
-        var link = $(this).data('navigation');
-        $('.main-home_wrapper').addClass('fade-content');
-        $('.project_list').delay(1000).fadeOut();
-        $('.main').addClass('main-expand');
-        $('.project-link-nav').removeClass('move-up');
-        $('.main-header-about').addClass('move-up');
-        $('.' + link + '-page').delay(1000).fadeIn();
-        $('footer').fadeOut();
-        $('.main-header-mobile_nav').removeClass('display_menu');
-        $('.animate_hamburger').removeClass('animate_hamburger');
+        GF.navigation.portfolio($(this));
     });
     $('.go-back').on('click', function () {
-        $('.main').removeClass('main-expand');
-        $('.main-home_wrapper').removeClass('fade-content');
-        $('.project_list').fadeIn();
-        $('.project-link-nav').addClass('move-up');
-        $('.main-header-about').removeClass('move-up');
-        $('.page').hide();
-        $('footer').fadeIn();
+        GF.navigation.home();
     });
 })(jQuery);
 
